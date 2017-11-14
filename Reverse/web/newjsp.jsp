@@ -1,6 +1,6 @@
 <%-- 
     Document   : newjsp
-    Created on : Oct 24, 2017, 4:23:22 PM
+    Created on : Nov 14, 2017, 7:13:08 PM
     Author     : bsc3
 --%>
 
@@ -13,12 +13,18 @@
     </head>
     <body>
         <%
-            String str=(String)(request.getParameter("num"));
-            int len=str.length();
-            for (int i=len;i>0;i--)
-            {
-                System.out.println(str.charAt(i));
+            String rev="";
+            String n=request.getParameter("num");
+            if(n != null) { // if myText is entered 
+            int len = n.length();
+            for (int i = len - 1; i >= 0; i--) {
+                rev = rev + n.charAt(i);
             }
+            // 3. Print the result string.
+            out.println("Reverse of Given String is :");
+            out.println("" + rev);
+        }
         %>
+        <h1>Hello World!</h1>
     </body>
 </html>
